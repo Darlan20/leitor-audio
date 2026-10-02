@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: leitor-audio-db
+    environment:
+      POSTGRES_DB: leitor_audio
+      POSTGRES_USER: leitor
+      POSTGRES_PASSWORD: leitor
+    ports:
+      - "5432:5432"
+    volumes:
+      - leitor_audio_pg:/var/lib/postgresql/data
+
+volumes:
+  leitor_audio_pg:
